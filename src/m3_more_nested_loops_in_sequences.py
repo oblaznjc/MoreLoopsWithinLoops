@@ -93,7 +93,7 @@ def largest_number(seq_seq):
 def run_test_largest_negative_number():
     """ Tests the    largest_negative_number    function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  largest_negative_number  function defined below.
     #
     #   Include enough tests to give you confidence that your solution
@@ -106,12 +106,12 @@ def run_test_largest_negative_number():
 
     # Test 1:
     expected = None
-    answer = largest_number(([], [], []))
+    answer = largest_negative_number(([], [], []))
     print('Expected and actual are:', expected, answer)
 
     # Test 2:
     expected = -2.6
-    answer = largest_number([(30, -5, 8, -20),
+    answer = largest_negative_number([(30, -5, 8, -20),
                             (100, -2.6, 88, -40, -5),
                             (400, 500)
                             ])
@@ -119,7 +119,7 @@ def run_test_largest_negative_number():
 
     # Test 3:
     expected = None
-    answer = largest_number([(30, 5, 8, 20),
+    answer = largest_negative_number([(30, 5, 8, 20),
                              (100, 2.6, 88, 40, 5),
                              (400, 500),
                              (0, 0, 0)
@@ -128,7 +128,7 @@ def run_test_largest_negative_number():
 
     # Test 4:
     expected = -2.6
-    answer = largest_number([(30, -5, 8, -20),
+    answer = largest_negative_number([(30, -5, 8, -20),
                              (100, -2.6, 88, -40, -5),
                              (400, 500),
                              [0, 0, 0]
@@ -158,7 +158,7 @@ def largest_negative_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # CHALLENGE: Try to solve this problem with no additional sequences
@@ -407,7 +407,7 @@ def first_is_elsewhere_too(seq_seq):
     and the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -423,6 +423,13 @@ def first_is_elsewhere_too(seq_seq):
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
 
+    for k in range(len(seq_seq[0])):
+        test = seq_seq[0][k]
+        for j in range(len(seq_seq) - 1):
+            for i in range(len(seq_seq[j + 1])):
+                if test == seq_seq[j + 1][i]:
+                    return True
+    return False
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
