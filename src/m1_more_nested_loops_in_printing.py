@@ -55,7 +55,7 @@ def triangle_right_justified(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -76,7 +76,7 @@ def triangle_right_justified(r):
 
     for k in range(r):
         for _ in range(r - k - 1):
-            print('x', end='')
+            print(' ', end='')
         for j in range(k + 1):
             print(j + 1, end= '')
         print()
@@ -115,7 +115,7 @@ def triangle_upside_down(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -124,6 +124,12 @@ def triangle_upside_down(r):
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
 
+    for k in range(r):
+        for _ in range(k):
+            print(' ', end='')
+        for j in range(r - k):
+            print(j + 1, end= '')
+        print()
 
 def run_test_vee():
     """ Tests the    vee    function. """
@@ -175,6 +181,15 @@ def vee(r):
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
 
+    for m in range(r):
+        for n in range(m):
+            print(' ',end='')
+        for k in range(r - m):
+            print(k + 1, end='')
+        print('-', end='')
+        for j in range(r - m):
+            print(r - m - j, end='')
+        print()
 
 def run_test_numbers_constant_forward():
     """ Tests the    numbers_constant_forward    function. """
